@@ -86,7 +86,7 @@ var app = {
 
 }
 
-var slider = new PageSlider($("#container"));
+var slider = new PageSlider($("#recipies"));
 
 $(window).on('hashchange', app.route);
 
