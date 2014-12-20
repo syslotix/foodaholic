@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+xmlns:gap="http://phonegap.com/ns/1.0"
+id="com.appsworm.foodaholic" version="0.0.1">
+  <name>Foodaholic</name>
+  <description>
+    A onestop destination for breakfast, maincourse, desserts, salads and cooking with kids recepies.
+  </description>
+  <author href="http://appsworm.com" email="info@appsworm.com">
+    AppsWorm
+  </author>
+  <gap:splash src="images/splash.png" />
+  <icon src="images/icon.png" />
+</widget>
