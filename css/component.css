@@ -115,9 +115,10 @@
 }
 @media (max-width:480px){
 	.cbp-spmenu-vertical {
-		top: 10%;
+		top: 8%;
 		width:120px;
 		height:150px;
+		border-top:1px solid #fff;
 	}
 	.cbp-spmenu h3 {
 		font-size: 1.2em;

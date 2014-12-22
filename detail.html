@@ -30,40 +30,21 @@
 			});
 		</script>
         
-<!---pop-up-box---->
-					  <script type="text/javascript" src="js/modernizr.custom.min.js"></script>    
-					<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
-					<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-                   
-					
-					<!---//pop-up-box---->	
-
 <script type="text/javascript">
 $(function() 
 {
 $(document).ready(function()
 {
-	$('.popup-with-zoom-anim').magnificPopup({
-							type: 'inline',
-							fixedContentPos: false,
-							fixedBgPos: true,
-							overflowY: 'auto',
-							closeBtnInside: true,
-							preloader: false,
-							midClick: true,
-							removalDelay: 300,
-							mainClass: 'my-mfp-zoom-in'
-						});
-						
-$.getJSON("http://www.foodaholic.biz/wp-json/posts?filter[cat]=15&callback=callback",function(data)
+	var queryString = window.location.search.substring(1);
+	 var vars = queryString.split("=");
+	//alert(vars[1]);
+$.getJSON("http://www.foodaholic.biz/wp-json/posts/"+vars[1]+"?callback=callback",function(data)
 {
-$.each(data, function(i,data)
-{
-var div_data = "<div class='portfolio-img'><a href='detail.html?ID="+data.ID+"' class='play-icon popup-with-zoom-anim'><img src='"+data.featured_image.guid+"' alt='' width='240' height='185' /></a><h4 class='home-title'>"+data.title+"</h4></div>";
+
+var div_data = "<div class='portfolio-img'><a href='#small-dialog-"+data.ID+"' class='play-icon popup-with-zoom-anim'><img src='"+data.featured_image.url+"' alt=''/><h4>"+data.title+"</h4></a><div id='small-dialog-"+data.ID+"' class='mfp-hide'><div class='portfolio-items'><img src='"+data.featured_image.guid +"' alt=''><h4>"+data.title+"</h4><p>"+data.content+"</p></div></div></div>";
 $(div_data).appendTo("#recipies");
 });
-}
-);
+
 return false;
 });
 });
@@ -129,78 +110,19 @@ return false;
 	<!--- Header Ends Here --->
 	
 	
-	<!--- Slider Starts Here --->
-	<div class="slider">
-		<div class="container">
-			<div class="slider-content">
-				<script src="js/responsiveslides.min.js"></script>
-			 <script>
-			    // You can also use "$(window).load(function() {"
-			    $(function () {
-			      // Slideshow 4
-			      $("#slider4").responsiveSlides({
-			        auto: true,
-			        pager: true,
-			        nav: true,
-			        speed: 500,
-			        namespace: "callbacks",
-			        before: function () {
-			          $('.events').append("<li>before event fired.</li>");
-			        },
-			        after: function () {
-			          $('.events').append("<li>after event fired.</li>");
-			        }
-			      });
-			
-			    });
-			  </script>
-			<!----//End-slider-script---->
-            
-			<!-- Slideshow 4 -->
-			    <div  id="top" class="callbacks_container">
-			      <ul class="rslides" id="slider4">
-			        <li>
-			          <div class="slider-top">
-			          	<img src="images/1.jpg" alt=""/>
-			          	<p>"I am so happy because I found this recipe, and it just made my life easier.<br>Thanks  so much for sharing!"</p>
-			          	<p class="below">- Michael Dawson, San Francisco, CA -</p>
-			          </div>
-			        </li>
-			        <li>
-			          <div class="slider-top">
-			          <img src="images/2.jpg" alt=""/>
-			          	<p>"I am so happy because I found this recipe, and it just made my life easier.<br>Thanks  so much for sharing!"</p>
-			          	<p class="below">- Aaron Dawson, San Francisco, CA -</p>
-			          </div>
-			        </li>
-			        <li>
-			          <div class="slider-top">
-			          	<img src="images/3.jpg" alt=""/>
-			          	<p>"I am so happy because I found this recipe, and it just made my life easier.<br>Thanks  so much for sharing!"</p>
-			          	<p class="below">- Johnson Dawson, San Francisco, CA -</p>
-			          </div>
-			        </li>
-			      </ul>
-			    </div>
-			    <div class="clearfix"> </div>
-	  			<!--- banner Slider Ends Here ---> 
-			</div>
-			</div>
-			</div>
-		</div>
-	</div>
-	<!--- Slider Ends Here --->
+	
 	<!--- Portfolio Starts Here --->
 	<div class="portfolio" id="portfolio">
 		
 		<div class="portfolio-start" id="recipies">
 											
+				<!--<div class="clearfix"></div>-->
 		</div>
 	</div>
 		
 	</div>
 	<!--- Portfolio Ends Here --->
-        
+	
 </body>
 </html>
 	
