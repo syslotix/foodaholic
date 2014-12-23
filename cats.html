@@ -66,12 +66,13 @@ $(function()
 {
 $(document).ready(function()
 {
-							
-$.getJSON("http://www.foodaholic.biz/wp-json/posts?filter[cat]=15&callback=callback",function(data)
+var queryString = window.location.search.substring(1);
+var vars = queryString.split("=");						
+	$.getJSON("http://www.foodaholic.biz/wp-json/posts?filter[cat]="+vars[1]+"&callback=callback",function(data)
 	{
 		$.each(data, function(i,data)
 		{
-		var div_data = "<div class='portfolio-img'><a href='detail.html?ID="+data.ID+"' class='play-icon popup-with-zoom-anim'><img src='"+data.featured_image.guid+"' alt='' width='240' height='185' /></a><h4 class='home-title'>"+data.title+"</h4><div id='#small-dialog-"+data.ID+"' class='mfp-hide popp'><div class='portfolio-items'><img src='"+data.featured_image.guid+"' alt='' width='240' height='185' /><h4>"+data.title+"</h4><p>"+data.content+"</p></div></div></div>";
+		var div_data = "<div class='portfolio-img'><a href='#small-dialog-"+data.ID+"' class='play-icon popup-with-zoom-anim'><img src='"+data.featured_image.guid+"' alt='' width='240' height='185' /></a><h4 class='home-title'>"+data.title+"</h4><div id='#small-dialog-"+data.ID+"' class='mfp-hide popp'><div class='portfolio-items'><img src='"+data.featured_image.guid+"' alt='' width='240' height='185' /><h4>"+data.title+"</h4><p>"+data.content+"</p></div></div></div>";
 		$(div_data).appendTo("#recipies");
 		$.getScript("js/modernizr.custom.min.js"); 
 		$.getScript("js/jquery.magnific-popup.js"); 
@@ -117,7 +118,7 @@ return false;
 					
 					<div class="cbp-spmenu-push">
 						<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s2">
-							<h3>Menu</h3>
+							<h3>Categories</h3>
 							<a href="cats.html?CID=7" class="scroll">Breakfast</a>
 							<a href="cats.html?CID=9" class="scroll">Desserts</a>
 							<a href="cats.html?CID=11" class="scroll">Drinks</a>

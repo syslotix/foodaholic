@@ -391,10 +391,10 @@ i.icon5{
 }
 .rslides img {
   height: auto;
-  border-radius:200px;
-  -webkit- border-radius:200px;
-  -moz- border-radius:200px;
-  -o- border-radius:200px;
+  border-radius:20px;
+  -webkit- border-radius:20px;
+  -moz- border-radius:20px;
+  -o- border-radius:20px;
 }
 .callbacks_tabs{
 	list-style: none;
@@ -640,7 +640,7 @@ p.footer-head a:hover{
 	}
 	.callbacks_tabs {
 		top: 88%;
-		left: 44%;
+		left: 28%;
 	}
 	ul.numbers li {
 		margin: 0em 0.55em;
@@ -878,3 +878,10 @@ p.footer-head a:hover{
 	text-align:center;
 	position:absolute;
 }
+
+.popp{position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;}

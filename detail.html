@@ -41,7 +41,7 @@ $(document).ready(function()
 $.getJSON("http://www.foodaholic.biz/wp-json/posts/"+vars[1]+"?callback=callback",function(data)
 {
 
-var div_data = "<div class='portfolio-img'><a href='#small-dialog-"+data.ID+"' class='play-icon popup-with-zoom-anim'><img src='"+data.featured_image.url+"' alt=''/><h4>"+data.title+"</h4></a><div id='small-dialog-"+data.ID+"' class='mfp-hide'><div class='portfolio-items'><img src='"+data.featured_image.guid +"' alt=''><h4>"+data.title+"</h4><p>"+data.content+"</p></div></div></div>";
+var div_data = "<div class='portfolio-img'><div id='' style='width:370px; padding:10px;'><div class='portfolio-items'><img src='"+data.featured_image.guid +"' alt=''><h3 style='margin-top:10px;'>"+data.title+"</h3><p>"+data.content+"</p></div></div></div>";
 $(div_data).appendTo("#recipies");
 });
 

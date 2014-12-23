@@ -2040,3 +2040,16 @@ $.magnificPopup.registerModule(RETINA_NS, {
 
 /*>>fastclick*/
  _checkInstance(); })(window.jQuery || window.Zepto);
+ 
+ $('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+ 
