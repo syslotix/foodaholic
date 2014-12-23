@@ -84,7 +84,7 @@ $.getJSON("http://www.foodaholic.biz/wp-json/posts?filter[cat]=18&callback=callb
 	{
 		$.each(data, function(i,data)
 		{
-		var div_data = "<li><div class='slider-top'><img src='"+data.featured_image.guid+"' width='345' height='245' alt=''/><p></p><p class='below'>"+data.title+"</p></div></li>";
+		var div_data = "<li><div class='slider-top'><img src='"+data.featured_image.guid+"' width='315' height='225' alt=''/><p></p><p class='below'>"+data.title+"</p></div></li>";
 		$(div_data).appendTo("#slider4");
 		$.getScript("js/responsiveslides.min.js"); 
 		});
