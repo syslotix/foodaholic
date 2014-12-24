@@ -59,7 +59,7 @@ $(div_data).appendTo("#recipies");
 $.getJSON("http://www.foodaholic.biz/wp-json/posts/"+vars[1]+"/comments",function(data)
 {
 
-var div_datac = "<div id='' style='width:360px;'><h2 style='margin-top:10px;'>Reviews</h2><small>Reviewed By: "+data.author.name+"</small><p>"+data.content+"</p></div>";
+var div_datac = "<div id='' style='width:360px;'><h2 style='margin-top:12px;'>Reviews</h2><small>Reviewed By: "+data.author.name+"</small><p>"+data.content+"</p></div>";
 $(div_datac).appendTo("#coms");
 });
 return false;

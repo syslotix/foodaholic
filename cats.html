@@ -115,7 +115,7 @@ if(vars[1] == '10'){
 	{
 		$.each(data, function(i,data)
 		{
-		var div_data = "<div class='portfolio-img'><a href='detail.html?ID="+data.ID+"'><img src='"+data.featured_image.guid+"' alt='' width='240' height='185' /></a><h4 class='home-title'>"+data.title+"</h4><div id='#small-dialog-"+data.ID+"' class='mfp-hide popp'><div class='portfolio-items'><img src='"+data.featured_image.guid+"' alt='' width='240' height='185' /><h4>"+data.title+"</h4><p>"+data.content+"</p></div></div></div>";
+		var div_data = "<div class='portfolio-img'><a href='detail.html?ID="+data.ID+"'><img src='"+data.featured_image.guid+"' alt='' width='240' height='185' /></a><a href='detail.html?ID="+data.ID+"'><h4 class='home-title'>"+data.title+"</h4></a><div id='#small-dialog-"+data.ID+"' class='mfp-hide popp'><div class='portfolio-items'><img src='"+data.featured_image.guid+"' alt='' width='240' height='185' /><h4>"+data.title+"</h4><p>"+data.content+"</p></div></div></div>";
 		$(div_data).appendTo("#recipies");
 		$.getScript("js/modernizr.custom.min.js"); 
 		$.getScript("js/jquery.magnific-popup.js"); 
