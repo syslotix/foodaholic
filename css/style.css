@@ -646,7 +646,7 @@ p.footer-head a:hover{
 		margin: 0em 0.55em;
 	}
 	.portfolio {
-		margin-top: 0em;
+		margin-top: -2em;
 	}
 	.portfolio-top {
 		padding: 2em 0;
@@ -885,3 +885,22 @@ p.footer-head a:hover{
   width: auto;
   max-width: 500px;
   margin: 20px auto;}
+  
+.search {float:right; margin-top:1.0em;}  
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../images/gif-load.gif) center no-repeat #fff;
+}
+.searchpage {width:200px; height:150px; margin:10px auto; clear:both;}
+.searchbox {margin:20px auto; width:300px; border:none !important; border-bottom:1px solid #c3c3c3; padding:50px 20px 20px 0px;}
+.searchtbox {float:left; border:none !important; border-bottom:1px solid #c3c3c3; padding:12px;}
+#u_0_2 {display:none !important;}
+.author-icon {float:left; background:url(../images/author-icon.png) no-repeat; width: 250px; height:35px; margin:6px 0px 0px 30px; text-align:right; padding-top:5px;}
+.sh-btn {float:left; width:35px; height:42px; background:#53a543; padding:5px; margin-left:8px; color:#fff;}

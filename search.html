@@ -72,8 +72,9 @@ $(function()
 {
 $(document).ready(function()
 {
-						
-	$.getJSON("http://www.foodaholic.biz/wp-json/posts?filter[cat]=15&callback=callback",function(data)
+	var queryString = window.location.search.substring(1);
+	var vars = queryString.split("=");					
+	$.getJSON("http://www.foodaholic.biz/wp-json/posts?filter[s]="+vars[1]+"&callback=callback",function(data)
 	{
 		$.each(data, function(i,data)
 		{
@@ -86,20 +87,16 @@ $(document).ready(function()
 	
 );
 
-//for slider
-$.getJSON("http://www.foodaholic.biz/wp-json/posts?filter[cat]=18&callback=callback",function(data)
-	{
-		$.each(data, function(i,data)
-		{
-		var div_data = "<li><div class='slider-top'><img src='"+data.featured_image.guid+"' width='315' height='225' alt=''/><p></p><p class='below'>"+data.title+"</p></div></li>";
-		$(div_data).appendTo("#slider4");
-		$.getScript("js/responsiveslides.min.js"); 
-		});
-	}
-);
 return false;
 });
 });
+</script>
+<script type="text/javascript">
+	function searchValue(val)
+	{
+		document.Form.action="search.html?val="+document.Form.txtsearch.value;
+	}
+	
 </script>
 </head>
 <body>
@@ -162,18 +159,10 @@ return false;
 				</div>
                 	
                 <div class="search">
-				 <a href="search.html" rel="prettyPhoto[inline]"><img src="images/search.png" alt=""></a>
+				 <a href="#small-dialog" rel="prettyPhoto[inline]"><img src="images/search.png" alt=""></a>
                  
 				</div>
-                <div id="small-dialog" class="mfp-hide">
-						<div class="login">
-							<h3>Log In</h3>
-							<h4>Already a Member</h4>
-							<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" />
-							<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"/>
-							<input type="submit" value="Login" />
-						</div>
-					</div>
+                
 				<div class="clearfix"></div>
 				
 		</div>
@@ -181,26 +170,17 @@ return false;
 	<!--- Header Ends Here --->
 	
 	
-	<!--- Slider Starts Here --->
-	<div class="slider">
-		<div class="container">
-			<div class="slider-content">
-				            
-			<!-- Slideshow 4 -->
-			    <div  id="top" class="callbacks_container">
-			      <ul class="rslides" id="slider4">
-			        
-			        
-			      </ul>
-			    </div>
-			    <div class="clearfix"> </div>
-	  			<!--- banner Slider Ends Here ---> 
-			</div>
-			</div>
-			</div>
+	<div style="background-color:#f3f3f3; padding:0px auto; margin-top:-20px;">
+											
+				<div class="searchpage">
+                	<div class="searchbox">
+                    	<form name="Form" action="search.html" method="post">
+                        <input class="searchtbox" name="txtsearch" type="text" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}" />
+                        <input type="submit" name="search" value="GO" class="sh-btn" onclick="searchValue(this.value);">
+                        </form>
+                    </div>
+                </div>
 		</div>
-	</div>
-	<!--- Slider Ends Here --->
 	<!--- Portfolio Starts Here --->
 	<div class="portfolio" id="portfolio">
 		

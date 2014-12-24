@@ -29,7 +29,18 @@
 				$('.scroll-pane').jScrollPane();
 			});
 		</script>
-        
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script type="text/javascript">
+//paste this code under head tag or in a seperate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+</script>
+       
 <script type="text/javascript">
 $(function() 
 {
@@ -37,14 +48,20 @@ $(document).ready(function()
 {
 	var queryString = window.location.search.substring(1);
 	 var vars = queryString.split("=");
-	//alert(vars[1]);
+	$(".se-pre-con").fadeOut("slow");;
 $.getJSON("http://www.foodaholic.biz/wp-json/posts/"+vars[1]+"?callback=callback",function(data)
 {
 
-var div_data = "<div class='portfolio-img'><div id='' style='width:360px; padding:10px;'><div class='portfolio-items' style='border:1px solid #c3c3c3'; border-radius:5px;><img src='"+data.featured_image.guid +"' alt=''><h3 style='margin-top:10px;'>"+data.title+"</h3><p>"+data.content+"</p></div></div></div>";
+var div_data = "<div class='portfolio-img' style='margin-top:-2em;'><div id='' style='width:360px;'><div class='portfolio-items'><img src='"+data.featured_image.guid +"' alt=''><div style='float:left; width:100%; height:45px; background:#f3f3f3;'><span style='float:left; width:50px; margin:10px;'><iframe src='//www.facebook.com/plugins/like.php?href=http://www.foodaholic.biz/?p="+data.ID+";width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=60' scrolling='no' frameborder='0' style='border:none; overflow:hidden; height:60px;' allowTransparency='true'></iframe></span><span class='author-icon'> Recipe and Cover : Maria Nasir</span></div><div style='width:360px; padding:15px;'><h3 style='margin-top:40px !important;'>"+data.title+"</h3><p>"+data.content+"</p></div></div></div></div>";
 $(div_data).appendTo("#recipies");
 });
 
+$.getJSON("http://www.foodaholic.biz/wp-json/posts/"+vars[1]+"/comments",function(data)
+{
+
+var div_datac = "<div id='' style='width:360px;'><h2 style='margin-top:10px;'>Reviews</h2><small>Reviewed By: "+data.author.name+"</small><p>"+data.content+"</p></div>";
+$(div_datac).appendTo("#coms");
+});
 return false;
 });
 });
@@ -52,6 +69,7 @@ return false;
 
 </head>
 <body>
+<div class="se-pre-con"></div>
 	<!--- Header Starts Here --->
 	<div class="header" id="home">
 		<div class="container">
@@ -118,9 +136,13 @@ return false;
 											
 				<!--<div class="clearfix"></div>-->
 		</div>
+        <div id="coms">
+        
+        </div>
 	</div>
 		
 	</div>
+    
 	<!--- Portfolio Ends Here --->
 	
 </body>
