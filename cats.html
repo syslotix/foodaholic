@@ -24,6 +24,16 @@
 					});
 					</script>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script type="text/javascript">
+//paste this code under head tag or in a seperate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+</script>
 <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
 		<script type="text/javascript" id="sourcecode">
 			$(function()
@@ -70,35 +80,35 @@ var queryString = window.location.search.substring(1);
 var vars = queryString.split("=");	
 
 if(vars[1] == '13'){
-	var cat_name ="<h2 style='color:#53a543;'>COOKING WITH KIDS</h2>";
+	var cat_name ="<h3 style='color:#53a543;'>COOKING WITH KIDS  </h3>";
 	$(cat_name).appendTo("#catname");
 }
 if(vars[1] == '7'){
-	var cat_name ="<h2 style='color:#53a543;'>BREAKfAST</h2>";
+	var cat_name ="<h3 style='color:#53a543;'>BREAKFAST  / Newest Recipes</h3>";
 	$(cat_name).appendTo("#catname");
 }
 if(vars[1] == '9'){
-	var cat_name ="<h2 style='color:#53a543;'>DESSERTS</h2>";
+	var cat_name ="<h3 style='color:#53a543;'>DESSERTS  / Newest Recipes</h3>";
 	$(cat_name).appendTo("#catname");
 }
 if(vars[1] == '11'){
-	var cat_name ="<h2 style='color:#53a543;'>DRINKS</h2>";
+	var cat_name ="<h3 style='color:#53a543;'>DRINKS / Newest Recipes</h3>";
 	$(cat_name).appendTo("#catname");
 }
 if(vars[1] == '6'){
-	var cat_name ="<h2 style='color:#53a543;'>Entrées and Sides</h2>";
+	var cat_name ="<h3 style='color:#53a543;'>Entrees and Sides </h3>";
 	$(cat_name).appendTo("#catname");
 }
 if(vars[1] == '8'){
-	var cat_name ="<h2 style='color:#53a543;'>MAINCOURSE</h2>";
+	var cat_name ="<h3 style='color:#53a543;'>MAINCOURSE  </h3>";
 	$(cat_name).appendTo("#catname");
 }
 if(vars[1] == '1'){
-	var cat_name ="<h2 style='color:#53a543;'>SALADS</h2>";
+	var cat_name ="<h3 style='color:#53a543;'>SALADS  / Newest Recipes</h3>";
 	$(cat_name).appendTo("#catname");
 }
 if(vars[1] == '10'){
-	var cat_name ="<h2 style='color:#53a543;'>TIPS</h2>";
+	var cat_name ="<h3 style='color:#53a543;'>TIPS  / Newest Recipes</h3>";
 	$(cat_name).appendTo("#catname");
 }
 	$.getJSON("http://www.foodaholic.biz/wp-json/posts?filter[cat]="+vars[1]+"&callback=callback",function(data)
@@ -131,6 +141,7 @@ return false;
 
 </head>
 <body>
+<div class="se-pre-con"></div>
 	<!--- Header Starts Here --->
 	<div class="header" id="home">
 		<div class="container">
@@ -187,6 +198,11 @@ return false;
                 <div class="logo">
 				 <a href="index.html"><img src="images/logo.png" alt=""></a>
 				</div>
+                
+                <div class="search">
+				 <a href="search.html" rel="prettyPhoto[inline]"><img src="images/search.png" alt=""></a>
+                 
+				</div>
 				<div class="clearfix"></div>
 				
 		</div>
@@ -195,7 +211,11 @@ return false;
 	
 	
 	<!--- Slider Starts Here --->
-	<div class="slider">
+	<div style="background:#f3f3f3;	height:30px; -webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	-moz-background-size: cover;
+	padding:5em 0">
 		<div class="container">
 			<div class="slider-content" id="catname">
 				 

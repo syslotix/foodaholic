@@ -226,8 +226,8 @@ i.icon5{
 /*--- Slider Part Starts Here ----*/
 /*------------------ Slider Part starts Here----------*/
 .slider{
-	background:#f3f3f3;
-	height:80px;
+	background:url(../images/slide-bg.jpg)no-repeat;
+	background-size: cover;
 	-webkit-background-size: cover;
 	-o-background-size: cover;
 	-ms-background-size: cover;

@@ -115,8 +115,8 @@
 }
 @media (max-width:480px){
 	.cbp-spmenu-vertical {
-		top: 8.3%;
-		width:160px;
+		top: 9%;
+		width:190px;
 		height:346px;
 		border-top:1px solid #fff;
 	}
